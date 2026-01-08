@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <div class="card mt-5 shadow">
+            <div class="card-body">
+                <h2 class="text-center mb-4">Login</h2>
+                <form method="POST" action="/login">
+                    <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <input type="text" name="username" class="form-control" placeholder="Enter 'boss' or 'student'" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" placeholder="Enter '123'" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <small class="text-muted">Hint: Use 'boss' (Admin) or 'student' (User)</small>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>All Songs</h2>
+<table class="table table-white shadow-sm mt-3">
+    <thead><tr><th>Title</th><th>Artist</th><th>Action</th></tr></thead>
+    <tbody>
+        {% for song in songs %}
+        <tr>
+            <td>{{ song.title }}</td>
+            <td>{{ song.artist }}</td>
+            <td>
+                {% if current_user.is_authenticated %}
+                <a href="/add_to_playlist/{{ song.id }}" class="btn btn-sm btn-success">+ Add</a>
+                {% else %}
+                <small>Login to add</small>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
