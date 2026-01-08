@@ -102,3 +102,4 @@ if __name__ == '__main__':
             db.session.add(User(username='student', password='123', role='user'))
             db.session.commit()
     app.run(debug=True)
+    
